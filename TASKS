@@ -1,0 +1,25 @@
+
+ - get Tracy into dev,local env form AppConfig
+
+ - add support for dev,local overrides to DataConfig
+
+ - add to ProjectConfig $languages['cz','én','fr']
+
+ - AppControler 
+        -> support for getLang() and setLang() or from __constructor
+
+        -> template(path,$params[])
+                -> check for _lang$ variation firstly
+
+
+ - AppResponse 
+        -> template(path,$params[])
+                -> check for _lang$ variation firstly
+
+        -> component(path,$params[])
+        -> page(path,$params[])
+        
+        -> page_link(name, $type = 'PageController')
+        -> component_link(path, $type = 'ComponentController')
+
+

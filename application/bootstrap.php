@@ -4,19 +4,21 @@ namespace {
 
 use k23\MCV\DispatcherService;
 
-    require_once 'Bootstrap/Autoload.php';
-    
-    \App\Bootstrap\Autoload::init();
+    //BOOT!
+    require_once 'Bootstrap/Bootstrap.php';    
+    \App\Bootstrap::boot();
 
+    //GET REQUEST
     $url = filter_input(INPUT_SERVER, 'REQUEST_URI');
     
+    //GET RESPONSE
     $dispatcher = new DispatcherService($url);
     $response = $dispatcher->dispatch();
     
-        //serve output
-        foreach($response->getHeaders() as $header) {
-            header($header);
-        }
+    //SERVE RESPONSE
+    foreach($response->getHeaders() as $declaration) {
+        header($declaration);
+    }
         
-        echo $response->getBody();    
+    echo $response->getBody();    
 }
