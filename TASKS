@@ -1,4 +1,36 @@
 
+ - finish bootstrap/autoload
+
+ - test DataConfig functionality
+
+ - test ServiceContainer::ins($name) functionality
+
+ - finish ORM DbModel, do DbQUery, DataType 
+            => add DataTypes
+            => add Driver for mysql    
+   ===> test it!
+    ===> write documentation
+
+     ===> write base model classes as Page, User, Settings
+
+ - add service default cache
+
+ - finish MCV => router
+     -> add index.php+.htaccess.dev+.htaccess.prod(force www etc.)
+
+ - write _cmd with poss to:
+         - ProjectConfig generate => lang, copy, project name
+         - install db, 
+         - clear cache, 
+         - create table path/to/dbquery, alter table path/to/dbquery
+         - (source codes editor)
+
+ - add magic image support
+
+ - add translations from JSON file(s)!!! app/i12n/en.json, page|component|layout/path/i12n/cz.json
+
+NICE TO HAVE:
+
  - get Tracy into dev,local env form AppConfig
 
  - add support for dev,local overrides to DataConfig
@@ -11,6 +43,8 @@
         -> template(path,$params[])
                 -> check for _lang$ variation firstly
 
+ - PageController
+        -> support for getPageModel() and setPageModel() or from __constructor
 
  - AppResponse 
         -> template(path,$params[])
@@ -19,7 +53,8 @@
         -> component(path,$params[])
         -> page(path,$params[])
         
-        -> page_link(name, $type = 'PageController')
-        -> component_link(path, $type = 'ComponentController')
-
-
+        -> page_link($type,name,$params[])       $type=main|ajax|action
+        -> component_link($type,path,$params[])
+        -> layout_link($type,path,$params[])
+             => link(page|component|layout,$type,path,$params)
+         

@@ -17,7 +17,7 @@ class ServicesContainer
             if(array_key_exists('usecall', $config) && $config['usecall']) {
                 //call class from call class function with parameters
             } else {
-                self::$_instances[$name]= new $config['servicename']($config['data']);
+                self::$_instances[$name]= new $config['class']($config['data']);
             }            
         }
         

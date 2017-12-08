@@ -3,10 +3,11 @@
 namespace {
 
 use k23\MCV\DispatcherService;
+use App\Bootstrap;
 
     //BOOT!
     require_once 'Bootstrap/Bootstrap.php';    
-    \App\Bootstrap::boot();
+    Bootstrap::boot();
 
     //GET REQUEST
     $url = filter_input(INPUT_SERVER, 'REQUEST_URI');
@@ -15,10 +16,10 @@ use k23\MCV\DispatcherService;
     $dispatcher = new DispatcherService($url);
     $response = $dispatcher->dispatch();
     
-    //SERVE RESPONSE
-    foreach($response->getHeaders() as $declaration) {
-        header($declaration);
+    //SERVE RESPONSE    
+    foreach($response->getHeaders() as $header) {
+        header($header);
     }
         
-    echo $response->getBody();    
+    echo $response->getBody();
 }

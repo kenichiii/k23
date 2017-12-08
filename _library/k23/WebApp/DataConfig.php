@@ -4,12 +4,12 @@ namespace k23\WebApp;
 
 class DataConfig
 {
-    protected static $_data = [];
+    protected static $data = [];
     
     public static function get($key)
     {
         if(array_key_exists($key, self::getData())) {
-            return self::$_data[$key];
+            return self::$data[$key];
         } else {
             throw new \Exception('Not existing DataConfig key: '.$key);
         }
@@ -17,11 +17,11 @@ class DataConfig
     
     public static function set($key, $value)
     {
-        self::$_data[$key]= $value;
+        self::$data[$key]= $value;
     }
     
     public static function getData()
     {
-        return self::$_data;
+        return self::$data;
     }
 }
