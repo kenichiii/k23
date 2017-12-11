@@ -1,3 +1,23 @@
+DEVLAB:
+console:
+   - create: 
+       - project name [langs] + create database tables and data
+       - component path -> controller ?only(ajax,action),template,javascript
+       - page path -> controller ?only(ajax,action),template,javascript
+       - api REQUEST_METHOD path -> support advaced routing
+
+   - install:
+       - plugin <name/path>  -> download and extract files from ftp + create database tables and data
+
+FRONT:
+   - write service using deffered loadScript, loadCSS, getAjax(template), getAction
+   - add html documentation
+
+ NICE TO HAVE
+   - typescript+webpack
+
+
+BACKEND:
 
  - finish bootstrap/autoload
 
@@ -31,7 +51,7 @@
 
 NICE TO HAVE:
 
- - get Tracy into dev,local env form AppConfig
+ - get Tracy into dev,local env form AppConfig | debbuger + firephp(own->print <script>console.log("string"|json_encode))
 
  - add support for dev,local overrides to DataConfig
 
